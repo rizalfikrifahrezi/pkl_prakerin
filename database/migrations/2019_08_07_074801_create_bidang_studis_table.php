@@ -15,8 +15,8 @@ class CreateBidangStudisTable extends Migration
     {
         Schema::create('bidang_studis', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('bidang_kode');
-            $table->string('bidang__nama');
+            $table->string('kode');
+            $table->string('nama');
             $table->timestamps();
         });
     }
