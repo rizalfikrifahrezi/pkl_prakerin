@@ -24,3 +24,5 @@ Route::group(['prefix' => 'admin','middleware'=>['auth','role:superadmin']], fun
     });
     Route::resource('user','UserController');
 });
+
+
