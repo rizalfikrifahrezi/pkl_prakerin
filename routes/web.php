@@ -34,3 +34,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//route CRUD
+Route::get('/bidangstudi','BidangStudiController@index');
+
+Route::resource('article', 'ArticleController');
