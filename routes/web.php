@@ -43,3 +43,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/bidangstudi','BidangStudiController@index');
 
 Route::resource('article', 'ArticleController');
+
+Route::resource('bidangstudi','BidangStudiController');

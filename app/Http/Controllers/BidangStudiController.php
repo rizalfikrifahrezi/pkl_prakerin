@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Article;
+use App\BidangStudi;
 
-class ArticleController extends Controller
+class BidangStudiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::orderBy('id', 'DESC')->paginate(5);
-        return view('article.index', compact('articles'));
+        $bidangstudis = BidangStudi::orderBy('id', 'DESC')->paginate(5);
+        return view('bidangstudi.index', compact('bidangstudis'));
     }
 
     /**
@@ -25,7 +25,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('article.create');
+        return view('bidangstudi.create');
     }
 
     /**
@@ -41,8 +41,8 @@ class ArticleController extends Controller
             'content' => 'required'
         ]);
 
-        $article = Article::create($request->all());
-        return redirect()->route('article.index')->with('message', 'Data berhasil dibuat!');
+        $bidangstudi = BidangStudi::create($request->all());
+        return redirect()->route('bidangstudi.index')->with('message', 'Data berhasil dibuat!');
     }
 
     /**
@@ -53,8 +53,8 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        $article = Article::findOrFail($id);
-        return view('article.show', compact('article'));
+        $bidangstudi = BidangStudi::findOrFail($id);
+        return view('bidangstudi.show', compact('bidangstudi'));
     }
 
     /**
@@ -65,8 +65,8 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        $article = Article::findOrFail($id);
-        return view('article.edit', compact('article'));
+        $bidangstudi = BidangStudi::findOrFail($id);
+        return view('bidangstudi.edit', compact('bidangstudi'));
     }
 
     /**
@@ -83,9 +83,9 @@ class ArticleController extends Controller
             'content' => 'required'
         ]);
 
-        $article = Article::findOrFail($id)->update($request->all());
+        $bidangstudi = BidangStudi::findOrFail($id)->update($request->all());
 
-        return redirect()->route('article.index')->with('message', 'Data berhasil diubah!');
+        return redirect()->route('bidangstudi.index')->with('message', 'Data berhasil diubah!');
     }
 
     /**
@@ -96,7 +96,7 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        $article = Article::findOrFail($id)->delete();
-        return redirect()->route('article.index')->with('message', 'Data berhasil dihapus!');
+        $bidangstudi = BidangStudi::findOrFail($id)->delete();
+        return redirect()->route('bidangstudi.index')->with('message', 'Data berhasil dihapus!');
     }
 }

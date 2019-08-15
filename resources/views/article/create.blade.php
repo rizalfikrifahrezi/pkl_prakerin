@@ -16,15 +16,17 @@
     </div>
     </div>
 
+    <div class="container">
     <div class="form-group {{ $errors->has('content') ? 'has-error' : '' }}">
-        <label for="content" class="control-label">Content</label>
-        <textarea name="content" cols="30" rows="5" class="form-control"></textarea>
+        <label for="content" class="control-label">Penjelasan</label>
+        <input type="text" class="form-control" name="content" placeholder="Ketik Penjelasan">
         @if ($errors->has('content'))
             <span class="help-block">{{ $errors->first('content') }}</span>
         @endif
     </div>
+    </div>
 
-    <div class="form-group">
+    <div class="container">
         <button type="submit" class="btn btn-info">Simpan</button>
         <a href="{{ route('article.index') }}" class="btn btn-default">Kembali</a>
     </div>

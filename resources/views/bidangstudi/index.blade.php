@@ -10,7 +10,7 @@
     <div class="container">
     <table class="table table-hover">
         <div class="container">
-            <a href="{{ route('article.create') }}" class="btn btn-primary">+Baru</a>
+            <a href="{{ route('bidangstudi.create') }}" class="btn btn-primary">+Baru</a>
         </div>
         <thead>
             <th>Id</th>
@@ -18,15 +18,15 @@
             <th>Aksi</th>
         </thead>
         <tbody>
-            @foreach ($articles as $article)
+            @foreach ($bidangstudis as $bidangstudi)
                 <tr>
-                    <td>{{ $article->id }}</td>
-                    <td><a href="{{ route('article.show', $article->id) }}">{{ $article->title }}</a></td>
+                    <td>{{ $bidangstudi->id }}</td>
+                    <td><a href="{{ route('bidangstudi.show', $bidangstudi->id) }}">{{ $bidangstudi->title }}</a></td>
                     <td>
-                        <form action="{{ route('article.destroy', $article->id) }}" method="post">
+                        <form action="{{ route('bidangstudi.destroy', $bidangstudi->id) }}" method="post">
                             {{csrf_field()}}
                             {{ method_field('DELETE') }}
-                            <a href="{{ route('article.edit', $article->id) }}" class="btn btn-success">Edit</a>
+                            <a href="{{ route('bidangstudi.edit', $bidangstudi->id) }}" class="btn btn-success">Edit</a>
                             <button type="submit" class="btn btn-danger">Hapus</button>
                         </form>
                     </td>
